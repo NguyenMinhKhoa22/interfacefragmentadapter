@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFrag">
+
+    <fragment
+        android:id="@+id/signInFrag"
+        android:name="com.example.mlivefirerepo_kotlin.fragment.SignInFrag"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFrag_to_signUpFrag"
+            app:destination="@id/signUpFrag" />
+        <action
+            android:id="@+id/action_signInFrag_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFrag"
+        android:name="com.example.mlivefirerepo_kotlin.fragment.SignUpFrag"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFrag_to_signInFrag"
+            app:destination="@id/signInFrag" />
+        <action
+            android:id="@+id/action_signUpFrag_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mlivefirerepo_kotlin.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_signInFrag"
+            app:destination="@id/signInFrag" />
+        <action
+            android:id="@+id/action_mainFragment_to_signUpFrag"
+            app:destination="@id/signUpFrag" />
+    </fragment>
+</navigation>

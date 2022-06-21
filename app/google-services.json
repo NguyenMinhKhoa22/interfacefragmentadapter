@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "505493757485",
+    "project_id": "mliverepofi-kotlin",
+    "storage_bucket": "mliverepofi-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505493757485:android:93a1cd8db72455ce7162a4",
+        "android_client_info": {
+          "package_name": "com.example.mlivefirerepo_kotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505493757485-c8aimpk2m4hou31ocg6bqfl9b39174h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mlivefirerepo_kotlin",
+            "certificate_hash": "1dca7e5b45d2a41ae632c59f2d1c3f8f896e687e"
+          }
+        },
+        {
+          "client_id": "505493757485-0o6fjbl9m02rpp542odm9esdtl7k4pbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWvGqbDR7DJE-etB63qZXddweX4wdEZzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505493757485-0o6fjbl9m02rpp542odm9esdtl7k4pbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

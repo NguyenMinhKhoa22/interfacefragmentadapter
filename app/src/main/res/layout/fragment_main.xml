@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F1EEE9"
+        android:orientation="vertical"
+        tools:context=".fragment.MainFragment">
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/rec_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="1dp"
+        android:background="#F3F1F5"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        android:overScrollMode="never" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/rec_viewpage_2"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_below="@id/rec_viewpage"
+        android:layout_marginTop="1dp"
+        android:background="#F3F1F5"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        android:overScrollMode="never" />
+    <Button
+        android:id="@+id/SignOutbtn"
+        android:layout_toRightOf="@id/btnShowInfoUser"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Sign Out" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnShowInfoUser"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_user"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddPost"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_toLeftOf="@id/btnShowInfoUser"
+        android:src="@drawable/ic_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnRef"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_toLeftOf="@id/btnAddPost"
+        android:src="@drawable/ic_refresh" />
+
+</RelativeLayout>
