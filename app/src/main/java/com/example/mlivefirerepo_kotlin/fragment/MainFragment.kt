@@ -101,23 +101,9 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
 
         mPostArrayList = ArrayList()
         mAdapterPost = PostAdapter(activity!!, mPostArrayList)
-        mAdapterPost.setCmtItemInterface(object : PostAdapter.OnClickCmtInterface {
-            override fun onItemClick(position: String?) {
-
-                    Log.e("Clicked", ""+position)
 
 
-            }
-
-        })
-
-
-        // test data for view pager
         getSizeArrayList()
-        //
-
-
-
 
         // button Sign Out
         SignOutbtn.setOnClickListener {
@@ -139,7 +125,6 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
 
     }
 
-
     // test viewpager
     private fun getSizeArrayList() {
         mFire.collection("Posts").addSnapshotListener(object : EventListener<QuerySnapshot> {
@@ -158,6 +143,7 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
         })
     }
 
+    //// interface
     override fun onItemClick(position: String?) {
          Log.e("Clicked", ""+position)
 
