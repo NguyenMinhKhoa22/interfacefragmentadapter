@@ -21,6 +21,7 @@ import com.example.mlivefirerepo_kotlin.viewmodel.PostViewModel
 import com.google.firebase.firestore.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
+import kotlinx.android.synthetic.main.row_post.*
 import kotlinx.android.synthetic.main.row_post.view.*
 
 
@@ -28,7 +29,7 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
     private var mFire: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var mAccountViewModel: AccountViewModel
     private lateinit var mPostViewModel: PostViewModel
-    private lateinit var mPostArrayList: ArrayList<PostModel>
+    private var mPostArrayList: ArrayList<PostModel> = ArrayList()
     private lateinit var mAdapterPost: PostAdapter
     lateinit var  navController : NavController
 
@@ -99,8 +100,9 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
 
-        mPostArrayList = ArrayList()
+        //// interface
         mAdapterPost = PostAdapter(activity!!, mPostArrayList)
+        mAdapterPost.setCmtItemInterface(this)
 
 
         getSizeArrayList()
@@ -145,7 +147,9 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
 
     //// interface
     override fun onItemClick(position: String?) {
-         Log.e("Clicked", ""+position)
+        imgPost.setOnClickListener {
+            Log.e("Mainfragment","clicked " + position )
+        }
 
     }
 
