@@ -29,7 +29,7 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
     private var mFire: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var mAccountViewModel: AccountViewModel
     private lateinit var mPostViewModel: PostViewModel
-    private var mPostArrayList: ArrayList<PostModel> = ArrayList()
+    private lateinit var mPostArrayList: ArrayList<PostModel>
     private lateinit var mAdapterPost: PostAdapter
     lateinit var  navController : NavController
 
@@ -53,12 +53,16 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
             rec_viewpage_2.apply {
                 mAdapterPost = PostAdapter(context, it)
                 adapter = mAdapterPost
+
                 offscreenPageLimit = mPostArrayList.size
                 setPadding(100, 0, 100, 0)
             }
+            mAdapterPost.setCmtItemInterface(this)
         }
 
         mPostViewModel.getDataPost()
+
+
 
     }
 
@@ -101,8 +105,9 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
         navController = Navigation.findNavController(view)
 
         //// interface
-        mAdapterPost = PostAdapter(activity!!, mPostArrayList)
-        mAdapterPost.setCmtItemInterface(this)
+        mPostArrayList = ArrayList()
+
+
 
 
         getSizeArrayList()
@@ -147,7 +152,7 @@ class MainFragment : Fragment(), PostAdapter.OnClickCmtInterface {
 
     //// interface
     override fun onItemClick(position: String?) {
-        imgPost.setOnClickListener {
+        view?.imgPost?.setOnClickListener {
             Log.e("Mainfragment","clicked " + position )
         }
 
